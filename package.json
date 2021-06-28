@@ -1,0 +1,23 @@
+{
+  "name": "react-native-advance-image",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "image",
+    "advance image",
+    "background image",
+    "react-native",
+    "react-component"
+  ],
+  "author": "harsh25jai",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-native": "^0.64.2",
+    "react-native-skeleton-placeholder": "^4.0.0"
+  }
+}
