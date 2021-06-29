@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Image, ActivityIndicator, ImageBackground, StyleProp, ImageStyle, ImageSourcePropType, ImageResizeMode, ColorValue } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, ImageBackground, StyleProp, ImageStyle, ImageSourcePropType, ImageResizeMode, ColorValue, ImagePropTypes } from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { defaultError, defaultLoading } from './assets';
 
