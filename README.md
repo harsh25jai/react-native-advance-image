@@ -5,7 +5,7 @@
 #### An Advanced Image component supporting multiple props and methods to show image on react native application in a better way.
 
 ## Introduction
-Advance image is upper component package created using react-native's Image Component with build in proper supporting better image implementatioin on react-native applicaations.
+Advance image is upper component package created using react-native's Image Component with build in proper supporting better image implementatioin on react-native applications.
 
 ## Features
 - Better Support for Image
