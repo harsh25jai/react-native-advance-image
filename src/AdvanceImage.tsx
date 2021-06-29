@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Image, ActivityIndicator, ImageBackground, StyleProp, ImageStyle, ImageSourcePropType, ImageResizeMode, ColorValue } from 'react-native';
+import { View, StyleSheet, Image, ActivityIndicator, ImageBackground, StyleProp, ImageStyle, ImageSourcePropType, ImageResizeMode, ColorValue, ImagePropTypes } from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { defaultError, defaultLoading } from './assets';
 
@@ -132,7 +132,8 @@ export default function AdvanceImage({
     loadingImageStyle,
     loadingImageSource,
     ErrorImageSource,
-    ErrorImageStyle
+    ErrorImageStyle,
+    ...props
 }: AdvanceImageProps) {
     const [mainSource, setMainSource] = useState(source);
     useEffect(() => { setMainSource(source) }, [source]);
@@ -194,6 +195,7 @@ export default function AdvanceImage({
 
     return (
         <ImageBackground
+            {...props}
             onLoadEnd={() => onImageLoadEnd()}
             onError={() => ErrorFunc()}
             style={[styles.backgroundImage, (ImageState.error && ImageState.loading && ErrorImageSource && ErrorImageStyle) ? ErrorImageStyle : style]}

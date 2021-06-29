@@ -71,7 +71,7 @@ interface AdvanceImageProps {
     borderRadius?: number;
 
     /**
-     * The background color of the image.
+     * The background color of the loading image.
      */
     backgroundColor?: ColorValue;
 
@@ -135,7 +135,8 @@ export default function AdvanceImage({
     loadingImageSource,
     ErrorImageSource,
     ErrorImageStyle,
-    children
+    children,
+    ...props
 }: AdvanceImageProps) {
     const [mainSource, setMainSource] = useState(source);
     useEffect(() => { setMainSource(source) }, [source]);
@@ -197,6 +198,7 @@ export default function AdvanceImage({
 
     return (
         <ImageBackground
+            {...props}
             onLoadEnd={() => onImageLoadEnd()}
             onError={() => ErrorFunc()}
             style={[styles.backgroundImage, (ImageState.error && ImageState.loading && ErrorImageSource && ErrorImageStyle) ? ErrorImageStyle : style]}
