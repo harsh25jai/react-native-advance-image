@@ -71,7 +71,7 @@ interface AdvanceImageProps {
     borderRadius?: number;
 
     /**
-     * The background color of the image.
+     * The background color of the loading image.
      */
     backgroundColor?: ColorValue;
 
