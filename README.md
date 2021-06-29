@@ -19,11 +19,11 @@ React native version > 60
 
 ## Installation
 ```sh
-yarn add react-native-advanced-image
+yarn add react-native-advance-image
 ```
 or
 ```sh
-npm install --save react-native-advanced-image
+npm install --save react-native-advance-image
 ```
 ## Props
 | Name | Type | Description | Default |
@@ -44,11 +44,23 @@ Inherits [ImageProps](https://reactnative.dev/docs/image#props)
 
 ## Usage
  ```js
-   this.setState({ spinner: false });
+import React from 'react';
+import {SafeAreaView} from 'react-native';
+import { AdvanceImage } from 'react-native-advance-image';
 
-   setTimeout(() => {
-     Alert.alert('Oops!', err.message);
-   }, 100);
+
+const App = () => {
+  return (
+    <SafeAreaView>
+        <AdvanceImage
+          loadingType='indicator'
+          source={{ uri: 'https://picsum.photos/800' }}
+          style={{ height: 300, width: 300 }} />
+    </SafeAreaView>
+  );
+};
+
+export default App;
    ```
 
 ## Peer Dependencies

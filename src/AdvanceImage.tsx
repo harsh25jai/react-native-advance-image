@@ -82,13 +82,11 @@ interface AdvanceImageProps {
      * 
      * - `skeleton`: A placeholder skeleton is shown while loading the image.
      * 
-     * - `icon`: An icon is shown while loading the image.
-     * 
      * - `indicator`: An indicator is shown while loading the image.
      * 
      * - `none`: To display none while loading the image
      */
-    loadingType?: 'image' | 'skeleton' | 'icon' | 'indicator' | 'none';
+    loadingType?: 'image' | 'skeleton' | 'indicator' | 'none';
 
     /**
      * Style for Loading Indicator
