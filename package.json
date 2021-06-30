@@ -1,6 +1,6 @@
 {
   "name": "react-native-advance-image",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An Advanced Image component supporting multiple props and methods to show image on react native application in a better way.",
   "main": "index.tsx",
   "scripts": {
@@ -11,9 +11,10 @@
     "advance image",
     "background image",
     "react-native",
+    "react",
     "react-component"
   ],
-  "author": "harsh25jai",
+  "author": "Harsh Jaiswal <harsh25jai@gmail.com> (https://github.com/harsh25jai)",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,12 +24,12 @@
     "@react-native-community/masked-view": "^0.1.11",
     "react": "^17.0.1",
     "react-native": "^0.64.2",
-    "react-native-skeleton-placeholder": "^4.0.0",
+    "react-native-skeleton-placeholder": "^4.0.0"
   },
   "peerDependencies": {
-    "@react-native-community/masked-view": "^0.1.11",
-    "react": "^17.0.1",
-    "react-native": "^0.64.2",
-    "react-native-skeleton-placeholder": "^4.0.0"
+    "@react-native-community/masked-view": ">=0.1.11",
+    "react": ">=16.0.1",
+    "react-native": ">=0.60.0",
+    "react-native-skeleton-placeholder": ">=4.0.0"
   }
 }
