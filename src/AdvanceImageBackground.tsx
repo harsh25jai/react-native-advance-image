@@ -80,15 +80,11 @@ interface AdvanceImageProps {
      * 
      * - `image`: A loading image passed through prop loadingImageSource or a default loading image while loading the source image.
      * 
-     * - `skeleton`: A placeholder skeleton is shown while loading the image.
-     * 
-     * - `icon`: An icon is shown while loading the image.
-     * 
      * - `indicator`: An indicator is shown while loading the image.
      * 
      * - `none`: To display none while loading the image
      */
-    loadingType?: 'image' | 'skeleton' | 'icon' | 'indicator' | 'none';
+    loadingType?: 'image' | 'indicator' | 'none';
 
     /**
      * Style for Loading Indicator
@@ -170,13 +166,13 @@ export default function AdvanceImage({
             );
         }
 
-        if (type == 'skeleton') {
-            return (
-                <SkeletonPlaceholder>
-                    <View style={style} />
-                </SkeletonPlaceholder>
-            );
-        }
+        // if (type == 'skeleton') {
+        //     return (
+        //         <SkeletonPlaceholder>
+        //             <View style={style} />
+        //         </SkeletonPlaceholder>
+        //     );
+        // }
 
         return (
             <ActivityIndicator
