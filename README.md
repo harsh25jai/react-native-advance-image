@@ -34,8 +34,8 @@ npm install --save react-native-advance-image
 | resizeMode | enum('cover', 'contain', 'stretch', 'repeat', 'center') | cover | Determines how to resize the image when the frame doesn't match the raw image dimensions. |
 | borderRadius | number || Define border Radius for Image. | 
 | backgroundColor | ColorValue || Define Background Color for Loading Image. |
-| loadingType | enum('image', 'indicator', 'none') | indicator | Choose a Loading type to be shown when the image will be fetched. |
-| loadingIndicatorStyle | Image Style Props {size: 'small'or'large', color: ColorString} |{size: 'small', color: 'black'| Style object for indicator style only. |
+| loadingType | enum('image', 'skeleton', 'indicator', 'none') | indicator | Choose a Loading type to be shown when the image will be fetched. |
+| loadingIndicatorStyle | Image Style Props {size: 'small'or'large', color: ColorString} |{size: 'small', color: 'black'}| Style object for indicator style only. |
 | loadingImageSource | ImageSource || The image source (either a remote URL or a local file resource) for showing image on Loading.|
 | ErrorImageSource | ImageSource || The image source (either a remote URL or a local file resource) for showing image on Error. |
 | ErrorImageStyle | Image Style Props |||
