@@ -26,19 +26,19 @@ or
 npm install --save react-native-advance-image
 ```
 ## Props
-| Name | Type | Description | Default |
+| Name | Type | Default | Description |
 | ------ | ------ | ------ | ------ |
-| style | Image Style Props |
-| source | ImageSource | The image source (either a remote URL or a local file resource). | |
-| resizeMethod | enum('auto', 'resize', 'scale') | The mechanism that should be used to resize the image when the image's dimensions differ from the image view's dimensions. | auto |
-| resizeMode | enum('cover', 'contain', 'stretch', 'repeat', 'center') | Determines how to resize the image when the frame doesn't match the raw image dimensions. | cover |
-| borderRadius | number | Define border Radius for Image | | 
-| backgroundColor | ColorValue | Define Background Color for Loading Image | |
-| loadingType |enum('image', 'indicator', 'none') | Choose a Loading type to be shown when the image will be fetched | indicator |
-| loadingIndicatorStyle | Image Style Props |
-| loadingImageSource | ImageSource | The image source (either a remote URL or a local file resource) for showing image on Loading. |
-| ErrorImageSource | ImageSource | The image source (either a remote URL or a local file resource) for showing image on Error. | |
-| ErrorImageStyle | Image Style Props |
+| style | Image Style Props |||
+| source | ImageSource || The image source (either a remote URL or a local file resource). |
+| resizeMethod | enum('auto', 'resize', 'scale') | auto | The mechanism that should be used to resize the image when the image's dimensions differ from the image view's dimensions. |
+| resizeMode | enum('cover', 'contain', 'stretch', 'repeat', 'center') | cover | Determines how to resize the image when the frame doesn't match the raw image dimensions. |
+| borderRadius | number || Define border Radius for Image. | 
+| backgroundColor | ColorValue || Define Background Color for Loading Image. |
+| loadingType | enum('image', 'indicator', 'none') | indicator | Choose a Loading type to be shown when the image will be fetched. |
+| loadingIndicatorStyle | Image Style Props {size: 'small'or'large', color: ColorString} |{size: 'small', color: 'black'| Style object for indicator style only. |
+| loadingImageSource | ImageSource || The image source (either a remote URL or a local file resource) for showing image on Loading.|
+| ErrorImageSource | ImageSource || The image source (either a remote URL or a local file resource) for showing image on Error. |
+| ErrorImageStyle | Image Style Props |||
 
 Inherits [ImageProps](https://reactnative.dev/docs/image#props)
 
@@ -62,7 +62,7 @@ const App = () => {
 
 export default App;
    ```
-[Expo Snack Example](https://snack.expo.io/OylhjVOSVj)
+[Expo Snack Example](https://snack.expo.io/4wFaAITMh)
 ## Peer Dependencies
 | Library |
 | ------ |

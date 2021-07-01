@@ -26,10 +26,12 @@
     "url": "https://github.com/harsh25jai/react-native-advance-image"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-native": "^0.64.2"
+    "@react-native-masked-view/masked-view": "^0.2.5",
+    "react": ">=16.0.1",
+    "react-native": ">=0.60.0"
   },
   "peerDependencies": {
+    "@react-native-masked-view/masked-view": "^0.2.5",
     "react": ">=16.0.1",
     "react-native": ">=0.60.0"
   }
