@@ -96,6 +96,14 @@ const App = () => {
         style={{ height: 300, width: 300, margin: 5 }}
       />
       
+      {/* Image Error example */}
+      <AdvanceImage
+        loadingType="indicator"
+        errorImageSource={require('./assets/snack-icon.png')}
+        source={{ uri: 'https://picsum.photos' }}
+        style={{ height: 300, width: 300, margin: 5 }}
+      />
+      
       {/* ImageBackground example */}
       <AdvanceImageBackground
         loadingType="indicator"
@@ -112,7 +120,7 @@ const App = () => {
 
 export default App;
    ```
-[Expo Snack Example](https://snack.expo.io/ChpIxIw8K)
+[Expo Snack Example](https://snack.expo.io/GFu08NwTe)
 ## Peer Dependencies
 | Library |
 | ------ |
