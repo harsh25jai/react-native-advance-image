@@ -52,10 +52,41 @@ import { AdvanceImage } from 'react-native-advance-image';
 const App = () => {
   return (
     <SafeAreaView>
-        <AdvanceImage
-          loadingType='indicator'
-          source={{ uri: 'https://picsum.photos/800' }}
-          style={{ height: 300, width: 300 }} />
+        {/* Indicator loading example */}
+      <AdvanceImage
+        loadingType="indicator"
+        source={{ uri: 'https://picsum.photos/800' }}
+        style={{ height: 300, width: 300, margin: 5 }}
+      />
+
+      {/* None loading example */}
+      <AdvanceImage
+        loadingType="none"
+        source={{ uri: 'https://picsum.photos/600' }}
+        style={{ height: 300, width: 300, margin: 5 }}
+      />
+
+      {/* default Image loading example */}
+      <AdvanceImage
+        loadingType="image"
+        source={{ uri: 'https://picsum.photos/650' }}
+        style={{ height: 300, width: 300, margin: 5 }}
+      />
+
+      {/* Image loading example */}
+      <AdvanceImage
+        loadingType="image"
+        loadingImageSource={require('./assets/snack-icon.png')}
+        source={{ uri: 'https://picsum.photos/950' }}
+        style={{ height: 300, width: 300, margin: 5 }}
+      />
+
+      {/* default Error example */}
+      <AdvanceImage
+        loadingType="indicator"
+        source={{ uri: 'https://picsum.photos' }}
+        style={{ height: 300, width: 300, margin: 5 }}
+      />
     </SafeAreaView>
   );
 };
