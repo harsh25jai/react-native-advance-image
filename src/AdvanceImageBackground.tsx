@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, ActivityIndicator, ImageBackground, StyleProp, ImageStyle, ImageSourcePropType, ImageResizeMode, ColorValue, ImagePropTypes } from 'react-native';
-import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
+import { View, StyleSheet,Image, ActivityIndicator, ImageBackground, StyleProp, ImageStyle, ImageSourcePropType, ImageResizeMode, ColorValue, ImagePropTypes } from 'react-native';
+import SkeletonPlaceholder from './SkeletonPlaceholder';
 import { defaultError, defaultLoading } from './assets';
 
 interface AdvanceImageProps {
@@ -80,11 +80,13 @@ interface AdvanceImageProps {
      * 
      * - `image`: A loading image passed through prop loadingImageSource or a default loading image while loading the source image.
      * 
+     * - `skeleton`: A placeholder skeleton is shown while loading the image.
+     * 
      * - `indicator`: An indicator is shown while loading the image.
      * 
      * - `none`: To display none while loading the image
      */
-    loadingType?: 'image' | 'indicator' | 'none';
+     loadingType?: 'image' | 'skeleton' | 'indicator' | 'none';
 
     /**
      * Style for Loading Indicator
@@ -108,12 +110,12 @@ interface AdvanceImageProps {
      * the error image for the image, displayed until image is ready to be
      * displayed, typically after when it got downloaded from network.
      */
-    ErrorImageSource?: ImageSourcePropType;
+    errorImageSource?: ImageSourcePropType;
 
     /**
      * Style for Error Image
      */
-    ErrorImageStyle?: StyleProp<ImageStyle>;
+    errorImageStyle?: StyleProp<ImageStyle>;
 
     children?: React.ReactNode;
 }
@@ -129,8 +131,8 @@ export default function AdvanceImage({
     loadingIndicatorStyle,
     loadingImageStyle,
     loadingImageSource,
-    ErrorImageSource,
-    ErrorImageStyle,
+    errorImageSource,
+    errorImageStyle,
     children,
     ...props
 }: AdvanceImageProps) {
@@ -166,13 +168,13 @@ export default function AdvanceImage({
             );
         }
 
-        // if (type == 'skeleton') {
-        //     return (
-        //         <SkeletonPlaceholder>
-        //             <View style={style} />
-        //         </SkeletonPlaceholder>
-        //     );
-        // }
+        if (type == 'skeleton') {
+            return (
+                <SkeletonPlaceholder>
+                    <View style={style} />
+                </SkeletonPlaceholder>
+            );
+        }
 
         return (
             <ActivityIndicator
@@ -188,7 +190,7 @@ export default function AdvanceImage({
             ...ImageState,
             error: true,
         });
-        const errorSource = ErrorImageSource ? ErrorImageSource : defaultError;
+        const errorSource = errorImageSource ? errorImageSource : defaultError;
         setMainSource(errorSource);
     };
 
@@ -197,7 +199,7 @@ export default function AdvanceImage({
             {...props}
             onLoadEnd={() => onImageLoadEnd()}
             onError={() => ErrorFunc()}
-            style={[styles.backgroundImage, (ImageState.error && ImageState.loading && ErrorImageSource && ErrorImageStyle) ? ErrorImageStyle : style]}
+            style={[styles.backgroundImage, (ImageState.error && ImageState.loading && errorImageSource && errorImageStyle) ? errorImageStyle : style]}
             source={mainSource}
             resizeMode={resizeMode}
             resizeMethod={resizeMethod}
