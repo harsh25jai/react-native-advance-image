@@ -110,12 +110,12 @@ interface AdvanceImageProps {
      * the error image for the image, displayed until image is ready to be
      * displayed, typically after when it got downloaded from network.
      */
-    ErrorImageSource?: ImageSourcePropType;
+    errorImageSource?: ImageSourcePropType;
 
     /**
      * Style for Error Image
      */
-    ErrorImageStyle?: StyleProp<ImageStyle>;
+    errorImageStyle?: StyleProp<ImageStyle>;
 
     children?: React.ReactNode;
 }
@@ -131,8 +131,8 @@ export default function AdvanceImage({
     loadingIndicatorStyle,
     loadingImageStyle,
     loadingImageSource,
-    ErrorImageSource,
-    ErrorImageStyle,
+    errorImageSource,
+    errorImageStyle,
     children,
     ...props
 }: AdvanceImageProps) {
@@ -190,7 +190,7 @@ export default function AdvanceImage({
             ...ImageState,
             error: true,
         });
-        const errorSource = ErrorImageSource ? ErrorImageSource : defaultError;
+        const errorSource = errorImageSource ? errorImageSource : defaultError;
         setMainSource(errorSource);
     };
 
@@ -199,7 +199,7 @@ export default function AdvanceImage({
             {...props}
             onLoadEnd={() => onImageLoadEnd()}
             onError={() => ErrorFunc()}
-            style={[styles.backgroundImage, (ImageState.error && ImageState.loading && ErrorImageSource && ErrorImageStyle) ? ErrorImageStyle : style]}
+            style={[styles.backgroundImage, (ImageState.error && ImageState.loading && errorImageSource && errorImageStyle) ? errorImageStyle : style]}
             source={mainSource}
             resizeMode={resizeMode}
             resizeMethod={resizeMethod}

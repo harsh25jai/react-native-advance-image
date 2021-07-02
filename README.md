@@ -37,8 +37,8 @@ npm install --save react-native-advance-image
 | loadingType | enum('image', 'skeleton', 'indicator', 'none') | indicator | Choose a Loading type to be shown when the image will be fetched. |
 | loadingIndicatorStyle | Image Style Props {size: 'small'or'large', color: ColorString} |{size: 'small', color: 'black'}| Style object for indicator style only. |
 | loadingImageSource | ImageSource || The image source (either a remote URL or a local file resource) for showing image on Loading.|
-| ErrorImageSource | ImageSource || The image source (either a remote URL or a local file resource) for showing image on Error. |
-| ErrorImageStyle | Image Style Props |||
+| errorImageSource | ImageSource || The image source (either a remote URL or a local file resource) for showing image on Error. |
+| errorImageStyle | Image Style Props |||
 
 Inherits [ImageProps](https://reactnative.dev/docs/image#props)
 
@@ -46,13 +46,14 @@ Inherits [ImageProps](https://reactnative.dev/docs/image#props)
  ```js
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import { AdvanceImage } from 'react-native-advance-image';
+import { AdvanceImage, AdvanceImageBackground } from 'react-native-advance-image';
 
 
 const App = () => {
   return (
     <SafeAreaView>
-        {/* Indicator loading example */}
+      
+      {/* Indicator loading example */}
       <AdvanceImage
         loadingType="indicator"
         source={{ uri: 'https://picsum.photos/800' }}
@@ -94,18 +95,30 @@ const App = () => {
         source={{ uri: 'https://picsum.photos' }}
         style={{ height: 300, width: 300, margin: 5 }}
       />
+      
+      {/* ImageBackground example */}
+      <AdvanceImageBackground
+        loadingType="indicator"
+        source={{ uri: 'https://picsum.photos/975' }}
+        style={{ height: 300, width: 300, margin: 5 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ color: 'red', fontSize: 20 }}>Image Baqckground</Text>
+        </View>
+      </AdvanceImageBackground>
+
     </SafeAreaView>
   );
 };
 
 export default App;
    ```
-[Expo Snack Example](https://snack.expo.io/R1afyiW8X)
+[Expo Snack Example](https://snack.expo.io/ChpIxIw8K)
 ## Peer Dependencies
 | Library |
 | ------ |
 | react |
 | react-native |
+| @react-native-masked-view/masked-view |
 
 ## License
 
