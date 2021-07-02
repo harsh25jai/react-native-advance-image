@@ -81,6 +81,13 @@ const App = () => {
         style={{ height: 300, width: 300, margin: 5 }}
       />
 
+      {/* Skeleton loading example */}
+      <AdvanceImage
+        loadingType="skeleton"
+        source={{uri:'https://picsum.photos/4000'}}
+        style={{ height: 300, width: 300 }}
+      />
+
       {/* default Error example */}
       <AdvanceImage
         loadingType="indicator"
@@ -93,7 +100,7 @@ const App = () => {
 
 export default App;
    ```
-[Expo Snack Example](https://snack.expo.io/4wFaAITMh)
+[Expo Snack Example](https://snack.expo.io/R1afyiW8X)
 ## Peer Dependencies
 | Library |
 | ------ |
