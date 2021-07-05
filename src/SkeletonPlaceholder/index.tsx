@@ -1,9 +1,16 @@
 import React, { Children, useCallback, useEffect, useMemo, useState } from 'react';
 import { View, Dimensions, Animated, Easing, StyleSheet } from 'react-native';
-import MaskedView from '@react-native-masked-view/masked-view';
+import MaskedView from '@react-native-community/masked-view';
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
-export default ({ children, backgroundColor = "#E1E9EE", speed = 800, highlightColor = "#F2F8FC", ...props }) => {
+
+interface SkeletonPlaceholderProps {
+    children?: any;
+    backgroundColor?: any;
+    speed?: any;
+    highlightColor?: any;
+}
+export default ({ children, backgroundColor = "#E1E9EE", speed = 800, highlightColor = "#F2F8FC", ...props }: SkeletonPlaceholderProps) => {
     const [layout, setLayout] = useState();
     const animatedValue = useMemo(() => new Animated.Value(0), []);
     const translateX = useMemo(() => animatedValue.interpolate({
