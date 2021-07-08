@@ -120,7 +120,7 @@ interface AdvanceImageProps {
     children?: React.ReactNode;
 }
 
-export default function AdvanceImage({
+export default function AdvanceImageBackground({
     style,
     source,
     resizeMode,
